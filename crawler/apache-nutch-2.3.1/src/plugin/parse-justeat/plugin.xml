@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin
+	id="parse-justeat"
+	name="JustEat Parse Filter"
+	version="1.0.0"
+	provider-name="nutch.org">
+	<runtime>
+		<library name="parse-justeat.jar">
+			<export name="*"/>
+		</library>
+	</runtime>
+	<requires>
+		<import plugin="nutch-extensionpoints"/>
+	</requires>
+	<extension id="org.apache.nutch.parse.metatags.parser"
+			name="Nutch JustEat Parse Filter"
+			point="org.apache.nutch.parse.ParseFilter">
+		<implementation id="JustEatParser"
+			class="org.apache.nutch.parse.justeat.JustEatParser"/>
+	</extension>
+</plugin>
